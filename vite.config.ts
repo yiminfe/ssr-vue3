@@ -52,7 +52,7 @@ export default defineConfig({
     port: 3000,
     proxy: {
       '/release': {
-        target: 'http://ssr.yiminfe.com',
+        target: 'https://ssr.yiminfe.com',
         rewrite: path => path.replace(/^\/release/, ''),
         changeOrigin: true
       }

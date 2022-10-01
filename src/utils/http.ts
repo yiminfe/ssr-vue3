@@ -2,7 +2,7 @@ import axios, { AxiosRequestConfig, AxiosResponse } from 'axios'
 const defaultConfig = {
   timeout: 5000,
   baseURL: import.meta.env.PROD
-    ? 'http://ssr.yiminfe.com'
+    ? 'https://ssr.yiminfe.com'
     : 'http://localhost:3000/release'
 }
 class Http {
