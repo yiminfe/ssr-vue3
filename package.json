@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "node server",
     "serve": "NODE_ENV=production node server",
+    "prod": "NODE_ENV=production pm2 start pm2.conf.json",
     "build": "run-p type-check build-only",
     "preview": "vite preview --port 4173",
     "build-only": "vite build",
