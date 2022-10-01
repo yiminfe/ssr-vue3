@@ -2,7 +2,7 @@ import axios, { AxiosRequestConfig, AxiosResponse } from 'axios'
 const defaultConfig = {
   timeout: 5000,
   baseURL: import.meta.env.PROD
-    ? 'http://110.42.184.111'
+    ? 'http://ssr.yiminfe.com'
     : 'http://localhost:3000/release'
 }
 class Http {
@@ -17,6 +17,7 @@ class Http {
   private httpInterceptorsRequest() {
     Http.axiosInstance.interceptors.request.use(
       (config: AxiosRequestConfig) => {
+        console.log('config', config)
         return config
       },
       err => {
