@@ -1,7 +1,7 @@
 import { createSSRApp } from 'vue'
 import App from './App.vue'
 import { createSSRRouter } from './router'
-import { ElMessage, ID_INJECTION_KEY } from 'element-plus'
+import ElementPlus, { ElMessage, ID_INJECTION_KEY } from 'element-plus'
 import 'element-plus/dist/index.css'
 import { createSSRI18n } from './language/i18n'
 import { createSSRStore, key } from './store'
@@ -20,6 +20,7 @@ export function createApp() {
     prefix: Math.floor(Math.random() * 10000),
     current: 0
   })
+  app.use(ElementPlus)
   app.use(i18n)
   return { app, router, store }
 }
