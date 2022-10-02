@@ -10,6 +10,11 @@ export async function render(
 ) {
   const { app, router, store } = createApp()
 
+  // 同步登录状态
+  if (token) {
+    store.state.userStatus = 1
+  }
+
   routerLoginInterceptor(router, token, redirect)
   await router.push(url)
   await router.isReady()

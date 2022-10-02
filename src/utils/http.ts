@@ -1,9 +1,7 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios'
 const defaultConfig = {
   timeout: 5000,
-  baseURL: import.meta.env.PROD
-    ? 'https://ssr.yiminfe.com'
-    : 'http://localhost:3000/release'
+  baseURL: import.meta.env.VITE_APP_API_URL
 }
 class Http {
   constructor() {

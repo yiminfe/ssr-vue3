@@ -26,7 +26,7 @@ function userLogout() {
     if (success) {
       router.push({ name: 'login' })
       store.commit('setUserStatus', 0)
-      localStorage.setItem('userId', '')
+      localStorage.removeItem('userId')
       clearAllCookie()
     } else {
       proxy.$message.error(message)
