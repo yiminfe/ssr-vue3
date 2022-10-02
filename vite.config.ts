@@ -101,6 +101,12 @@ export default defineConfig({
         additionalData:
           '@import "@/assets/scss/variable.scss";@import "@/assets/scss/main.scss";',
         charset: false
+      },
+      less: {
+        charset: false
+      },
+      css: {
+        charset: false
       }
     },
     postcss: {

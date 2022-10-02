@@ -8,7 +8,9 @@
     "prod": "NODE_ENV=production pm2 start pm2.conf.json",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix",
     "build:client": "vite build --outDir dist/client --ssrManifest",
+    "build:client-debug": "vite build --outDir dist/client --ssrManifest --debug",
     "build:server": "vite build --outDir dist/server --ssr src/entry-server.ts",
+    "build:server-debug": "vite build --outDir dist/server --ssr src/entry-server.ts --debug",
     "build:ssr": "npm run build:client && npm run build:server"
   },
   "dependencies": {
