@@ -23,10 +23,15 @@ export default defineConfig({
   plugins: [
     vue(),
     VitePWA({
-      injectRegister: 'auto',
       registerType: 'autoUpdate',
       devOptions: {
         enabled: true
+      },
+      workbox: {
+        cleanupOutdatedCaches: true,
+        sourcemap: true,
+        globPatterns: ['**/*.{js,css,ico,png,svg,gif,jpg,jpeg,woff,woff2}'],
+        navigateFallback: null
       },
       manifest: {
         name: 'ssr-vue3',

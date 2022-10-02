@@ -7,9 +7,11 @@ import { createSSRI18n } from './language/i18n'
 import { createSSRStore, key } from './store'
 import 'default-passive-events'
 import type { Router } from 'vue-router'
-// import { useRegisterSW } from 'virtual:pwa-register/vue'
+import { useRegisterSW } from 'virtual:pwa-register/vue'
 
-// useRegisterSW()
+if (!import.meta.env.SSR) {
+  useRegisterSW()
+}
 
 export function createApp() {
   const app = createSSRApp(App)
