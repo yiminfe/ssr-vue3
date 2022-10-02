@@ -7,7 +7,12 @@
       "@/*": ["./src/*"]
     },
     "composite": true,
-    "types": ["node", "element-plus/global"],
+    "types": [
+      "node",
+      "element-plus/global",
+      "vite/client",
+      "vite-plugin-pwa/client"
+    ],
     "preserveValueImports": false,
     "target": "esnext",
     "module": "esnext",

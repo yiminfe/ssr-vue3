@@ -7,6 +7,7 @@ import vue from '@vitejs/plugin-vue'
 // import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import viteCompression from 'vite-plugin-compression'
 import viteImagemin from 'vite-plugin-imagemin'
+import { VitePWA } from 'vite-plugin-pwa'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -21,8 +22,40 @@ export default defineConfig({
   },
   plugins: [
     vue(),
+    VitePWA({
+      injectRegister: 'auto',
+      registerType: 'autoUpdate',
+      devOptions: {
+        enabled: true
+      },
+      manifest: {
+        name: 'ssr-vue3',
+        short_name: 'ssr',
+        description: 'ssr App description',
+        theme_color: '#fff',
+        background_color: '#fff',
+        orientation: 'any',
+        icons: [
+          {
+            src: 'icons/icon-192x192.png',
+            sizes: '192x192',
+            type: 'image/png'
+          },
+          {
+            src: 'icons/icon-512x512.png',
+            sizes: '512x512',
+            type: 'image/png'
+          },
+          {
+            src: 'icons/icon_light.svg',
+            sizes: '155x155',
+            type: 'image/svg',
+            purpose: 'any maskable'
+          }
+        ]
+      }
+    }),
     viteCompression(),
-
     viteImagemin({
       gifsicle: {
         optimizationLevel: 7,

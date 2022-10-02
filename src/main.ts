@@ -7,12 +7,16 @@ import { createSSRI18n } from './language/i18n'
 import { createSSRStore, key } from './store'
 import 'default-passive-events'
 import type { Router } from 'vue-router'
+// import { useRegisterSW } from 'virtual:pwa-register/vue'
+
+// useRegisterSW()
 
 export function createApp() {
   const app = createSSRApp(App)
   const store = createSSRStore()
   const router = createSSRRouter()
   const i18n = createSSRI18n()
+
   app.config.globalProperties.$message = ElMessage
   app.use(store, key)
   app.use(router)
