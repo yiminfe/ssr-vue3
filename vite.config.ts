@@ -30,7 +30,7 @@ export default defineConfig({
       workbox: {
         cleanupOutdatedCaches: true,
         sourcemap: true,
-        globPatterns: ['**/*.{js,css,ico,png,svg,gif,jpg,jpeg,woff,woff2}'],
+        globPatterns: ['**/*.{js,css,ico,png,svg,gif,jpg,jpeg,woff,woff2,txt}'],
         navigateFallback: null
       },
       manifest: {
