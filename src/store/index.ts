@@ -35,7 +35,7 @@ const store = createStore<AllStateTypes>({
     pageNo: 1,
     pageSize: 6,
     total: 0,
-    cityCode: 'hz',
+    cityCode: 'cd',
     roomDetail: {},
     roomId: null,
     orderVisible: false

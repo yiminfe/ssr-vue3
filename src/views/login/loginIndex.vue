@@ -4,6 +4,11 @@ import { getCurrentInstance, onMounted } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import useFormProperties from '@/composables/login/useFormProperties'
 import useFormOperates from '@/composables/login/useFormOperates'
+import type { log } from 'console'
+
+const name: string = 'login'
+
+console.log(name)
 
 const router = useRouter()
 const { t } = useI18n()
